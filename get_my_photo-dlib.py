@@ -1,3 +1,4 @@
+# -*- codeing: utf-8 -*-
 """
 打开摄像头，获取被识别人的图片
 标记特征，处理图片
@@ -46,8 +47,13 @@ while True:
         print('[ INFO ] : 正在获取图片--> %s' % index)
         # 从摄像头读取照片
         success, img = camera.read()
-        # 转为灰度图片
-        gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        # 转为灰度图片,如果是读取视频文件
+        # 这里必须加上判断视频是否读取结束的判断,否则播放到最后一帧的时候出现问题了
+        if success is True:
+            # 转为灰度图片
+            gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        else:
+            break
         # 使用detector进行人脸检测
         dets = detector(gray_img, 1)
 
@@ -75,3 +81,7 @@ while True:
     else:
         print('[ INFO ] : Finished!')
         break
+
+# 释放资源
+camera.release()
+camera.destroyAllWindows()
