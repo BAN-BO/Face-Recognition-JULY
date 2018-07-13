@@ -3,7 +3,6 @@
 标记特征，处理图片
 """
 import os
-import sys
 import dlib
 import random
 import cv2
