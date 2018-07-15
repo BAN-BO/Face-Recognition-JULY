@@ -8,4 +8,5 @@ Face Recognition JULY
 
 2、获取其他图片集
 [图片集下载](http://vis-www.cs.umass.edu/lfw/lfw.tgz)
+
 3、

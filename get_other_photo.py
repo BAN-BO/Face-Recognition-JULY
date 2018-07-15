@@ -1,5 +1,6 @@
 # -*- codeing: utf-8 -*-
 """
+获取他人图像集
 解压图片集到input_img
 """
 import sys
